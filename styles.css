@@ -68,6 +68,33 @@ body{
     line-height: 1.35;
 }
 
+header {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 50px;
+    width: 50px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:flex-end;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
 .card{
 background-color:   var(--apple-green);
 background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
