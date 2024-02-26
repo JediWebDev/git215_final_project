@@ -3,88 +3,183 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+    list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* CSS VARIABLES */
-:root{
-    --white: #FDFDFDff;
-    --light-green: #b7e4c7;
-    --green: #70e000;
+:root {
+    --white: #ffffff;
+    --cream: #E0E4CC;
+    --light-blue: #69D2E7;
+    --blue: #1b4965;
     --black: #212529;
 
     --fonts: 'Inter', sans-serif;
 }
 
-body{
+body {
     Display: flex;
     flex-direction: column;
-    background-color: var(--light-green);
-    background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+    --s: 64px;
+    /* control the size */
+    --c1: var(--white);
+    --c2: var(--light-blue);
+    --_g: 90deg, #0000 0;
+    background:
+        conic-gradient(from 135deg, var(--c1) var(--_g)) var(--s) calc(var(--s)/2),
+        conic-gradient(from 135deg, var(--c2) var(--_g)),
+        conic-gradient(from 135deg at 50% 0, var(--c1) var(--_g)) var(--c2);
+    background-size: calc(2*var(--s)) var(--s);
     font-family: var(--fonts);
     color: var(--black);
     justify-content: center;
     margin: 0;
-    line-height: 1.35;
 }
 
 header {
-    display:flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     background-color: var(--white);
 }
 
-.company-name{
+.company-name {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
 }
 
-h1{
+h1 {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -103,7 +198,7 @@ h1{
     margin: 1rem 0.8rem;
 }
 
-.logo a:hover{
+.logo a:hover {
     cursor: pointer;
 }
 
@@ -115,16 +210,18 @@ nav ul {
     margin: 1rem 3rem;
 }
 
-nav ul, a{
+nav ul,
+a {
     text-decoration: none;
     color: var(--black);
     font-size: 1.05em;
     font-weight: 600;
 }
 
-nav ul, a:hover{
+nav ul,
+a:hover {
     cursor: pointer;
-    color: var(--green);
+    color: var(--light-blue);
 }
 
 /*main */
@@ -134,8 +231,101 @@ main {
     justify-content: center;
 }
 
-.card{
-background-color:   var(--green);
-background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+h2 {
+    font-size: 1.5em;
+    font-weight: 700;
 }
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    width: 75vw;
+    height: 25vh;
+    gap: 2rem;
+    line-height: 1.35;
+    margin: 0 5rem;
+    padding: 3rem;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+
+.group2-a{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    width: 75vw;
+    height: 25vh;
+    gap: 2rem;
+    line-height: 1.35;
+    margin: 0 5rem;
+    padding: 3rem;   
+}
+
+ .chalet {
+    max-width: 100%;
+    height: 100%;
+}
+
+h3{
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.group2a-text {
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    background-color: var(--white);
+    font-weight: normal;
+    font-size: 1rem;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.group2-b{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    width: 75vw;
+    height: 25vh;
+    gap: 2rem;
+    line-height: 1.35;
+    margin: 0 5rem;
+    padding: 3rem;   
+}
+
+ .snowy-chalet {
+    max-width: 100%;
+    height: 100%;
+} 
+
+h3{
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.group2-text {
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    background-color: var(--white);
+    font-weight: normal;
+    font-size: 1rem;
+    padding: 2rem;
+    gap: 2rem;
+}
+
